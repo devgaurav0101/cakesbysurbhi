@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cakes by Surbhi Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="menu">
+  <div class="menu-shell">
+    <header class="menu-header">
+      <div class="menu-header-top">
+        <a class="back-link" href="index.html">Back</a>
+        <div>
+          <p class="menu-brand">Cakes by Surbhi</p>
+          <p class="menu-caption">Home kitchen bakery</p>
+          <h1 class="menu-note-title">Pick your cake and tap Order Now</h1>
+        </div>
+      </div>
+      <div class="menu-strip">
+        <button class="menu-pill is-active" type="button" data-filter="all">All</button>
+        <button class="menu-pill" type="button" data-filter="1 kg">1 kg</button>
+        <button class="menu-pill" type="button" data-filter="Half kg">Half kg</button>
+        <button class="menu-pill" type="button" data-filter="Bento">Bento</button>
+      </div>
+    </header>
+
+    <main class="menu-main">
+      <section class="menu-section">
+        <div class="menu-section-heading">
+          <div>
+            <p class="section-tag">Cake Menu</p>
+            <h2>Ready to order</h2>
+          </div>
+        </div>
+        <div id="cakeGrid" class="menu-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="ownerPanel" class="owner-panel" aria-label="Owner controls">
+        <div class="panel-card">
+          <div class="panel-header">
+            <div>
+              <p class="section-tag">Admin Access</p>
+              <h2 id="panelTitle">Login to Manage Cakes</h2>
+            </div>
+            <button id="logoutButton" class="btn btn-outline hidden" type="button">Logout</button>
+          </div>
+
+          <form id="loginForm" class="stack">
+            <label>
+              <span>Username</span>
+              <input id="username" name="username" type="text" placeholder="Enter username" required>
+            </label>
+            <label>
+              <span>Password</span>
+              <input id="password" name="password" type="password" placeholder="Enter password" required>
+            </label>
+            <button class="btn btn-primary" type="submit">Login</button>
+          </form>
+
+          <form id="cakeForm" class="stack hidden">
+            <input id="editingCakeId" name="editingCakeId" type="hidden">
+            <div class="grid-two">
+              <label>
+                <span>Cake Name</span>
+                <input id="cakeName" name="cakeName" type="text" placeholder="Chocolate Truffle" required>
+              </label>
+              <label>
+                <span>Price</span>
+                <input id="cakePrice" name="cakePrice" type="number" min="0" step="1" placeholder="699" required>
+              </label>
+            </div>
+            <label>
+              <span>Size</span>
+              <select id="cakeSize" name="cakeSize" required>
+                <option value="">Select size</option>
+                <option value="1 kg">1 kg</option>
+                <option value="Half kg">Half kg</option>
+                <option value="Bento">Bento</option>
+              </select>
+            </label>
+            <div class="form-actions">
+              <button id="saveCakeButton" class="btn btn-primary" type="submit">Add Cake</button>
+              <button id="cancelEditButton" class="btn btn-outline hidden" type="button">Cancel Edit</button>
+            </div>
+            <p class="hint">Logged-in admin can add, edit, and delete cakes directly from this menu page.</p>
+          </form>
+
+          <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

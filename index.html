@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cakes by Surbhi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div>
+          <p class="eyebrow">Homemade cakes, crafted with love</p>
+          <h1>Cakes by Surbhi</h1>
+        </div>
+        <div class="veg-badge" aria-label="Pure veg">
+          <span class="veg-icon"></span>
+          <span>Pure Veg</span>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <h2>Homemade, pure veg, fresh cakes made with love.</h2>
+          <p>
+            We do not have a physical store. Every cake is freshly prepared in a home kitchen, made with care, and kept
+            completely pure veg for your celebrations.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="menu.html">Explore Cakes</a>
+          </div>
+          <a class="insta-banner" href="https://instagram.com/cakes_by_surbhi" target="_blank" rel="noreferrer">
+            Visit us on Instagram: @cakes_by_surbhi
+          </a>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">Today's sweet note</p>
+          <h3>Homemade cakes feel more personal, more fresh, and more heartfelt than store-bought desserts.</h3>
+          <p>Choose a home kitchen cake when you want fresh preparation, pure veg ingredients, and a made-with-love touch for your special moments.</p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="ownerPanel" class="owner-panel" aria-label="Owner controls">
+        <div class="panel-card">
+          <div class="panel-header">
+            <div>
+              <p class="section-tag">Owner Area</p>
+              <h2 id="panelTitle">Login to Manage Cakes</h2>
+            </div>
+            <button id="logoutButton" class="btn btn-outline hidden" type="button">Logout</button>
+          </div>
+
+          <form id="loginForm" class="stack">
+            <label>
+              <span>Username</span>
+              <input id="username" name="username" type="text" placeholder="Enter username" required>
+            </label>
+            <label>
+              <span>Password</span>
+              <input id="password" name="password" type="password" placeholder="Enter password" required>
+            </label>
+            <button class="btn btn-primary" type="submit">Login</button>
+          </form>
+
+          <form id="cakeForm" class="stack hidden">
+            <input id="editingCakeId" name="editingCakeId" type="hidden">
+            <div class="grid-two">
+              <label>
+                <span>Cake Name</span>
+                <input id="cakeName" name="cakeName" type="text" placeholder="Chocolate Truffle" required>
+              </label>
+              <label>
+                <span>Price</span>
+                <input id="cakePrice" name="cakePrice" type="number" min="0" step="1" placeholder="699" required>
+              </label>
+            </div>
+            <label>
+              <span>Size</span>
+              <select id="cakeSize" name="cakeSize" required>
+                <option value="">Select size</option>
+                <option value="1 kg">1 kg</option>
+                <option value="Half kg">Half kg</option>
+                <option value="Bento">Bento</option>
+              </select>
+            </label>
+            <div class="form-actions">
+              <button id="saveCakeButton" class="btn btn-primary" type="submit">Add Cake</button>
+              <button id="cancelEditButton" class="btn btn-outline hidden" type="button">Cancel Edit</button>
+            </div>
+            <p class="hint">Logged-in admin can add new cakes, edit existing ones, and delete cakes from the public menu.</p>
+          </form>
+
+          <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
