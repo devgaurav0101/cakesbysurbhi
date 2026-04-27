@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: cakes-by-surbhi
+    name: cakesbysurbhi
     runtime: static
     buildCommand: 'true'
     staticPublishPath: .
